@@ -11,10 +11,10 @@
       </div>
     </div>
     <div class="footer-main__links">
-      @@if (address) {
+      @@if (page !== "contacts") {
       <address class="footer-main__address footer-address">
         }
-        @@if (!address) {
+        @@if (!page === "contacts") {
         <div class="footer-main__address footer-address">
           }
           <ul class="footer-address__list">
@@ -29,31 +29,31 @@
                 rel="noopener noreferrer">г. Москва, 2-я Звенигородская улица, 13 строение 43</a>
             </li>
           </ul>
-          @@if (!address) {
+          @@if (!page === "contacts") {
         </div>
         }
-        @@if (address) {
+        @@if (page !== "contacts") {
       </address>
       }
       <nav class="footer-main__nav footer-nav" aria-label="Навигация">
         <ul class="footer-nav__list">
           <li class="footer-nav__item">
-            <a class="footer-link" href="#">Что мы делаем</a>
+            <a class="footer-link" href="#" @@if (page==="services" ) { aria-current="page" }>Что мы делаем</a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-link" href="#">Как мы работаем</a>
+            <a class="footer-link" href="#" @@if (page==="process" ) { aria-current="page" }>Как мы работаем</a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-link" href="#">Наша команда</a>
+            <a class="footer-link" href="#" @@if (page==="team" ) { aria-current="page" }>Наша команда</a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-link" href="#">Наша история</a>
+            <a class="footer-link" href="#" @@if (page==="story" ) { aria-current="page" }>Наша история</a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-link" href="#">Блог</a>
+            <a class="footer-link" href="#" @@if (page==="blog" ) { aria-current="page" }>Блог</a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-link" href="#">Контакты</a>
+            <a class="footer-link" href="#" @@if (page==="contacts" ) { aria-current="page" }>Контакты</a>
           </li>
         </ul>
       </nav>
@@ -83,6 +83,6 @@
   </div>
   <div class="footer-bottom">
     <span class="footer-bottom__text">&copy; Исполком, 2023</span>
-    <a class="footer-bottom__text" href="#" target="_blank" rel="noopener noreferrer">политика обработки персональных данных</a>
+    <a class="footer-bottom__text" href="#" target="_blank" rel="noopener noreferrer" @@if (page==="policy" ) { aria-current="page" }>политика обработки персональных данных</a>
   </div>
 </footer>

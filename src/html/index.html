@@ -9,13 +9,13 @@
   @@include("icons/icons.svg")
   <div class="wrapper" data-wrapper>
     @@include("base/header.html", {
-    "index": true
+    "page": "index"
     })
     <main class="main">
       @@include("pages/index/index.html")
     </main>
     @@include("base/footer.html", {
-    "address": true
+    "page": "index"
     })
     @@include("ui/up.html")
   </div>

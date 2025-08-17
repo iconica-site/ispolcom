@@ -1,7 +1,7 @@
 <header class="header" id="header" data-header="header" data-burger="wrapper">
   <div class="header__wrapper" data-header="wrapper">
     <div class="header__logo header-logo">
-      <a class="header-logo__icon" href="/" @@if (index) { aria-current="page" }>
+      <a class="header-logo__icon" href="/" @@if (page==="index" ) { aria-current="page" }>
         <svg width="93.75" height="30.46" aria-hidden="true">
           <use xlink:href="#icon-logo"></use>
         </svg>
@@ -11,22 +11,22 @@
       <nav class="header-nav__inner" aria-label="Главная навигация">
         <ul class="header-nav__list">
           <li class="header-nav__item">
-            <a class="header-nav__link" href="#">Что мы делаем</a>
+            <a class="header-nav__link" href="#" @@if (page==="services" ) { aria-current="page" }>Что мы делаем</a>
           </li>
           <li class="header-nav__item">
-            <a class="header-nav__link" href="#">Как мы работаем</a>
+            <a class="header-nav__link" href="#" @@if (page==="process" ) { aria-current="page" }>Как мы работаем</a>
           </li>
           <li class="header-nav__item">
-            <a class="header-nav__link" href="#">Наша команда</a>
+            <a class="header-nav__link" href="#" @@if (page==="team" ) { aria-current="page" }>Наша команда</a>
           </li>
           <li class="header-nav__item">
-            <a class="header-nav__link" href="#">Наша история</a>
+            <a class="header-nav__link" href="#" @@if (page==="story" ) { aria-current="page" }>Наша история</a>
           </li>
           <li class="header-nav__item">
-            <a class="header-nav__link" href="#">Блог</a>
+            <a class="header-nav__link" href="#" @@if (page==="blog" ) { aria-current="page" }>Блог</a>
           </li>
           <li class="header-nav__item">
-            <a class="header-nav__link" href="#">Контакты</a>
+            <a class="header-nav__link" href="#" @@if (page==="contacts" ) { aria-current="page" }>Контакты</a>
           </li>
           <li class="header-nav__item">
             <a class="header-nav__link" href="https://lab.ispolcom.ru/" target="_blank" rel="noopener noreferrer">Лаборатория ИСПОЛКОМ</a>
