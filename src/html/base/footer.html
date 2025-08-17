@@ -11,20 +11,30 @@
       </div>
     </div>
     <div class="footer-main__links">
+      @@if (address) {
       <address class="footer-main__address footer-address">
-        <ul class="footer-address__list">
-          <li class="footer-address__item">
-            <a class="footer-link" href="tel:+74952580909">+7 495 258 09 09</a>
-          </li>
-          <li class="footer-address__item">
-            <a class="footer-link" href="mailto:ask@ispolcom.ru">ask@ispolcom.ru</a>
-          </li>
-          <li class="footer-address__item">
-            <a class="footer-link" href="https://yandex.az/maps/213/moscow/?ll=37.552022%2C55.762424&mode=routes&rtext=~55.762624%2C37.552127&rtt=mt&ruri=~&z=16" target="_blank"
-              rel="noopener noreferrer">г. Москва, 2-я Звенигородская улица, 13 строение 43</a>
-          </li>
-        </ul>
+        }
+        @@if (!address) {
+        <div class="footer-main__address footer-address">
+          }
+          <ul class="footer-address__list">
+            <li class="footer-address__item">
+              <a class="footer-link" href="tel:+74952580909">+7 495 258 09 09</a>
+            </li>
+            <li class="footer-address__item">
+              <a class="footer-link" href="mailto:ask@ispolcom.ru">ask@ispolcom.ru</a>
+            </li>
+            <li class="footer-address__item">
+              <a class="footer-link" href="https://yandex.az/maps/213/moscow/?ll=37.552022%2C55.762424&mode=routes&rtext=~55.762624%2C37.552127&rtt=mt&ruri=~&z=16" target="_blank"
+                rel="noopener noreferrer">г. Москва, 2-я Звенигородская улица, 13 строение 43</a>
+            </li>
+          </ul>
+          @@if (!address) {
+        </div>
+        }
+        @@if (address) {
       </address>
+      }
       <nav class="footer-main__nav footer-nav" aria-label="Навигация">
         <ul class="footer-nav__list">
           <li class="footer-nav__item">

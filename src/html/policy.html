@@ -8,11 +8,15 @@
 <body>
   @@include("icons/icons.svg")
   <div class="wrapper" data-wrapper>
-    @@include("base/header.html")
+    @@include("base/header.html", {
+    "index": false
+    })
     <main class="main">
       @@include("pages/policy/policy.html")
     </main>
-    @@include("base/footer.html")
+    @@include("base/footer.html", {
+    "address": true
+    })
     @@include("ui/up.html")
   </div>
   @@include("base/js.html")

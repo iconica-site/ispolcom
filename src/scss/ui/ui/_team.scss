@@ -22,6 +22,11 @@
   row-gap: 20px;
   column-gap: 10px;
 
+  // .team-list--wide
+  &--wide {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
   // .team-list__item
   &__item {
   }
