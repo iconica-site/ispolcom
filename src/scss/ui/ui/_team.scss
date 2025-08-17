@@ -1,0 +1,74 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.team {
+  padding-block: functions.responsive-value(120, 60);
+
+  // .team__title
+  &__title {
+    margin-block-end: 30px;
+  }
+
+  // .team__button
+  &__button {
+    margin-block-start: 30px;
+  }
+}
+
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(functions.responsive-value(240, 120), 1fr));
+  row-gap: 20px;
+  column-gap: 10px;
+
+  // .team-list__item
+  &__item {
+  }
+}
+
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  block-size: 100%;
+
+  // .employee-card__image
+  &__image {
+    flex: 0 0 auto;
+    aspect-ratio: 281 / 360;
+    font-size: 0;
+  }
+
+  // .employee-card__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+  }
+
+  // .employee-card__title
+  &__title {
+    font-size: functions.responsive-value(22, 14);
+    font-weight: 500;
+    line-height: calc(26 / 22);
+
+    a {
+      @include mixins.prefers-reduced-motion {
+        transition-property: color;
+        transition-duration: 0.3s;
+      }
+
+      @include mixins.hover {
+        color: variables.$color-accent;
+      }
+    }
+  }
+
+  // .employee-card__caption
+  &__caption {
+    font-size: functions.responsive-value(16, 12);
+    line-height: calc(21 / 16);
+  }
+}

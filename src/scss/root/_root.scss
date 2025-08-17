@@ -1,4 +1,7 @@
 :root {
-  --header-height: 70px;
-  // --outline-color: ;
+  --header-height: 50px;
+
+  @media (min-width: #{768 + 0.1px}) {
+    --header-height: 70px;
+  }
 }

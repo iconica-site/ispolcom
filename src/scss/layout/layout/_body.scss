@@ -4,6 +4,7 @@
 
 body {
   font-family: variables.$font-manrope;
+  color: variables.$color-text;
 
   .scroll-lock & {
     overflow: hidden;

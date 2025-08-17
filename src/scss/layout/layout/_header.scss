@@ -21,8 +21,8 @@
       $behavior: "fixed-end-value"
     );
     inline-size: 100%;
-    min-block-size: 70px;
-    padding-block: 10px;
+    min-block-size: 50px;
+    padding-block: 5px;
     padding-inline: functions.responsive-value(
       80,
       15,
@@ -32,6 +32,10 @@
     );
     background-color: variables.$color-white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    @media (min-width: #{768 + 0.1px}) {
+      min-block-size: 70px;
+    }
 
     &::after {
       content: "";
@@ -252,7 +256,6 @@
   // .header-nav__link
   &__link {
     font-size: 24px;
-    color: variables.$color-333333;
 
     @include mixins.prefers-reduced-motion {
       transition-property: color;

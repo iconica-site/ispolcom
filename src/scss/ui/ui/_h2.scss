@@ -1,0 +1,12 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.h2 {
+  font-size: functions.responsive-value(40, 24);
+  font-weight: 500;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
