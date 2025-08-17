@@ -23,6 +23,11 @@
   row-gap: 50px;
   column-gap: 30px;
 
+  // .blog-list--wide
+  &--wide {
+    grid-template-columns: repeat(auto-fill, minmax(functions.responsive-value(400, 250), 1fr));
+  }
+
   // .blog-list__item
   &__item {
   }
@@ -46,6 +51,10 @@
     font-weight: 600;
     line-height: calc(27 / 20);
     color: variables.$color-black;
+
+    .blog-list--wide & {
+      font-size: functions.responsive-value(24, 20);
+    }
 
     a {
       @include mixins.prefers-reduced-motion {
