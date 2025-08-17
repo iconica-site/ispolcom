@@ -1,18 +1,18 @@
 import * as basicScroll from 'basicscroll';
 
 /** @type {NodeListOf<HTMLLIElement>} */
-const teamItems = document.querySelectorAll('.team-list--animate .team-list__item');
+const blogItems = document.querySelectorAll('.blog-list--animate .blog-list__item');
 
-teamItems.forEach((item) => {
+blogItems.forEach((item, index) => {
   const instance = basicScroll.create({
     elem: item,
     from: 'middle-bottom',
-    to: 'bottom-bottom',
+    to: 'middle-middle',
     direct: true,
     props: {
-      '--opacity': {
-        from: 0,
-        to: 1,
+      '--translate': {
+        from: 50 * (index % 3 + 1),
+        to: 0,
       },
     }
   });
