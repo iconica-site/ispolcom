@@ -3,16 +3,55 @@
 @use "../../variables/variables";
 
 .services {
-  padding-block: functions.responsive-value(60, 30);
+  &:not(:has(&__item)) {
+    padding-block: functions.responsive-value(60, 30);
+  }
+
+  // .services__item
+  &__item {
+    padding-block: functions.responsive-value(60, 30);
+
+    // .services__item--gray
+    &--gray {
+      background-color: variables.$color-f6f6f6;
+    }
+  }
 
   // .services__header
   &__header {
     margin-block-end: 30px;
+
+    .services__item & {
+      margin-block-end: functions.responsive-value(50, 30);
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  // .services__title
+  &__title {
+    .services__item & {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &::before {
+        content: "/";
+        color: rgba($color: variables.$color-text, $alpha: 0.5);
+      }
+    }
   }
 
   // .services__text
   &__text {
-    margin-block-start: 10px;
+    margin-block-start: functions.responsive-value(20, 10);
     font-size: functions.responsive-value(18, 14);
     font-weight: 300;
     line-height: calc(23 / 18);
@@ -50,7 +89,6 @@
 .service-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
   block-size: 100%;
   padding-block: functions.responsive-value(30, 20);
@@ -58,17 +96,27 @@
   border: 3px solid rgba($color: variables.$color-accent, $alpha: 0);
   background-color: variables.$color-f3f3f3;
 
-  @media (min-width: #{768 + 0.1px}) {
-    .services-list__item:nth-child(-n + 2) & {
-      border-block-start-color: variables.$color-accent;
-    }
+  .services:not(:has(.services__item)) & {
+    justify-content: space-between;
+  }
 
-    .services-list__item:is(
-        :is(:nth-last-child(2):nth-child(2n + 1), :nth-last-child(1):nth-child(2n + 2)),
-        :is(:nth-last-child(1):nth-child(2n + 1))
-      ):not(:nth-child(-n + 2))
-      & {
-      border-block-end-color: variables.$color-accent;
+  .services__item--gray & {
+    background-color: variables.$color-white;
+  }
+
+  @media (min-width: #{768 + 0.1px}) {
+    @media (max-width: 1024px) {
+      .services-list__item:nth-child(-n + 2) & {
+        border-block-start-color: variables.$color-accent;
+      }
+
+      .services-list__item:is(
+          :is(:nth-last-child(2):nth-child(2n + 1), :nth-last-child(1):nth-child(2n + 2)),
+          :is(:nth-last-child(1):nth-child(2n + 1))
+        ):not(:nth-child(-n + 2))
+        & {
+        border-block-end-color: variables.$color-accent;
+      }
     }
   }
 
@@ -114,6 +162,7 @@
     font-size: functions.responsive-value(20, 16);
     font-weight: 500;
     letter-spacing: calc(-0.5 / 20 * 1em);
+    text-transform: uppercase;
   }
 
   // .service-card__text
