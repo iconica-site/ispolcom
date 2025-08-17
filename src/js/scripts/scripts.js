@@ -1,2 +1,4 @@
 import "./scripts/header-observers.js";
 import "./scripts/burger.js";
+import "./scripts/search.js";
+import "./scripts/scroll-progress.js";

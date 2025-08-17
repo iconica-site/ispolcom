@@ -1,25 +1,68 @@
 <header class="header" id="header" data-header="header" data-burger="wrapper">
-  <div class="header__wrapper container" data-header="wrapper">
-    <div class="header__inner">
-      <div class="header-logo">
-        <a class="header-logo__image ibg" href="#">
-          <!-- <img src="@img" alt="Лого"> -->
-        </a>
-      </div>
-      <button class="burger-button" data-burger="button">
-        <span class="burger-button__line burger-button__line--top"></span>
-        <span class="burger-button__line burger-button__line--center"></span>
-        <span class="burger-button__line burger-button__line--bottom"></span>
-      </button>
-      <div class="header-nav" data-burger="menu">
-        <nav class="header-nav__inner" aria-label="Главная навигация">
-          <ul class="header-nav__list">
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="#">link</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+  <div class="header__wrapper" data-header="wrapper">
+    <div class="header__logo header-logo">
+      <a class="header-logo__icon" href="/" aria-current="page">
+        <svg width="93.75" height="30.46" aria-hidden="true">
+          <use xlink:href="#icon-logo"></use>
+        </svg>
+      </a>
     </div>
+    <div class="header__nav header-nav" data-burger="menu">
+      <nav class="header-nav__inner" aria-label="Главная навигация">
+        <ul class="header-nav__list">
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Что мы делаем</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Как мы работаем</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Наша команда</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Наша история</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Блог</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Контакты</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="https://lab.ispolcom.ru/" target="_blank" rel="noopener noreferrer">Лаборатория ИСПОЛКОМ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__buttons">
+      <button class="header__button header__button--search" aria-label="Открыть поиск">
+        <svg width="21" height="20" aria-hidden="true">
+          <use xlink:href="#icon-search"></use>
+        </svg>
+      </button>
+      <button class="header__button header__button--burger" data-burger="button"><span></span></button>
+    </div>
+    <search class="search">
+      <form class="search__form" id="form-search" action="#">
+        <div class="search__row">
+          <input class="search__input" id="search-input" name="search-input" type="search" inputmode="search" enterkeyhint="search" placeholder="Поиск" required>
+          <button class="search__button search__button--submit" type="submit" aria-label="Найти">
+            <svg width="20" height="20" aria-hidden="true">
+              <use xlink:href="#icon-search-2"></use>
+            </svg>
+          </button>
+          <button class="search__button search__button--reset" type="reset" aria-label="Очистить">
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <button class="search__close" type="button" aria-label="Закрыть">
+          <svg width="15" height="15" aria-hidden="true">
+            <use xlink:href="#icon-close"></use>
+          </svg>
+        </button>
+      </form>
+    </search>
   </div>
 </header>

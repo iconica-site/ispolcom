@@ -3,11 +3,7 @@
 @use "../../variables/variables";
 
 body {
-  // font-family: ;
-  // font-size: ;
-  // line-height: ;
-  // color: ;
-  // background-color: ;
+  font-family: variables.$font-manrope;
 
   .scroll-lock & {
     overflow: hidden;
