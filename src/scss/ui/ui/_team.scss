@@ -3,7 +3,7 @@
 @use "../../variables/variables";
 
 .team {
-  padding-block: functions.responsive-value(120, 60);
+  padding-block: functions.responsive-value(60, 30);
 
   // .team__title
   &__title {

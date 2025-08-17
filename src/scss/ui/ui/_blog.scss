@@ -1,0 +1,120 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.blog {
+  padding-block: functions.responsive-value(60, 30);
+
+  // .blog__title
+  &__title {
+    margin-block-end: 30px;
+  }
+
+  // .blog__button
+  &__button {
+    margin-block-start: 30px;
+  }
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(functions.responsive-value(280, 250), 1fr));
+  align-items: start;
+  row-gap: 50px;
+  column-gap: 30px;
+
+  // .blog-list__item
+  &__item {
+  }
+}
+
+.blog-card {
+  display: grid;
+  gap: 10px;
+
+  // .blog-card__header
+  &__header {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    gap: 10px;
+  }
+
+  // .blog-card__title
+  &__title {
+    font-size: functions.responsive-value(20, 16);
+    font-weight: 600;
+    line-height: calc(27 / 20);
+    color: variables.$color-black;
+
+    a {
+      @include mixins.prefers-reduced-motion {
+        transition-property: color;
+        transition-duration: 0.3s;
+      }
+
+      @include mixins.hover {
+        color: variables.$color-accent;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        font-size: 0;
+      }
+    }
+  }
+
+  // .blog-card__text
+  &__text {
+    font-size: functions.responsive-value(14, 12);
+    font-weight: 300;
+    line-height: calc(21.7 / 14);
+    color: rgba($color: variables.$color-black, $alpha: 0.9);
+  }
+}
+
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+
+  // .blog-tags__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        flex: 0 0 auto;
+        inline-size: 2px;
+        aspect-ratio: 1 / 1;
+        font-size: 0;
+        background-color: variables.$color-accent;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  // .blog-tags__link
+  &__link {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: calc(1 / 10 * 1em);
+    color: variables.$color-accent;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-black;
+    }
+  }
+}

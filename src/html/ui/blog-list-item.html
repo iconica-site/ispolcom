@@ -1,0 +1,38 @@
+<li class="blog-list__item">
+  <article class="blog-card">
+    <div class="blog-card__header">
+      @@if (h2) {
+      <h2 class="blog-card__title">
+        <a href="#">@@title</a>
+      </h2>
+      }
+      @@if (h3) {
+      <h3 class="blog-card__title">
+        <a href="#">@@title</a>
+      </h3>
+      }
+      @@if (text) {
+      <p class="blog-card__text">@@text</p>
+      }
+    </div>
+    @@if (tags) {
+    <div class="blog-tags">
+      @@if (tags.item_1) {
+      <div class="blog-tags__item">
+        <a class="blog-tags__link" href="#">@@tags.item_1</a>
+      </div>
+      }
+      @@if (tags.item_2) {
+      <div class="blog-tags__item">
+        <a class="blog-tags__link" href="#">@@tags.item_2</a>
+      </div>
+      }
+      @@if (tags.item_3) {
+      <div class="blog-tags__item">
+        <a class="blog-tags__link" href="#">@@tags.item_3</a>
+      </div>
+      }
+    </div>
+    }
+  </article>
+</li>
