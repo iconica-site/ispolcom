@@ -22,6 +22,10 @@
   row-gap: 20px;
   column-gap: 10px;
 
+  // .team-list--animate
+  &--animate {
+  }
+
   // .team-list--wide
   &--wide {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -37,6 +41,12 @@
   flex-direction: column;
   gap: 10px;
   block-size: 100%;
+
+  .team-list--animate & {
+    @media (min-width: #{1024 + 0.1px}) {
+      opacity: var(--opacity, 0);
+    }
+  }
 
   // .employee-card__image
   &__image {

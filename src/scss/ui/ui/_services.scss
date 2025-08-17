@@ -108,6 +108,14 @@
     background-color: variables.$color-white;
   }
 
+  .services-list--animate & {
+    @media (min-width: #{1024 + 0.1px}) {
+      opacity: var(--opacity, 0);
+      transform: translate(calc(var(--translate, 10) * 1%), calc(var(--translate, 10) * 1%));
+      overflow: hidden;
+    }
+  }
+
   @media (min-width: #{768 + 0.1px}) {
     @media (max-width: 1024px) {
       .services-list__item:nth-child(-n + 2) & {
@@ -158,14 +166,6 @@
 
     .services-list__item:last-child:not(:first-child) & {
       border-block-end-color: variables.$color-accent;
-    }
-  }
-
-  .services-list--animate & {
-    @media (min-width: #{1024 + 0.1px}) {
-      opacity: var(--opacity, 0);
-      transform: translate(calc(var(--translate, 10) * 1%), calc(var(--translate, 10) * 1%));
-      overflow: hidden;
     }
   }
 

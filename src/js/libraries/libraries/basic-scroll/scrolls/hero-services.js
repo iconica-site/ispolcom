@@ -24,7 +24,7 @@ serviceItems.forEach((item) => {
   instance.start();
 });
 
-/** @type {NodeListOf<HTMLLIElement>} */
+/** @type {NodeListOf<HTMLParagraphElement>} */
 const serviceTexts = document.querySelectorAll('.services-list--animate .service-card__text');
 
 serviceTexts.forEach((text) => {
