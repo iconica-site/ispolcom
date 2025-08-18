@@ -1,0 +1,100 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.contacts {
+  display: grid;
+  grid-auto-flow: dense;
+  align-items: start;
+  gap: 30px;
+  padding-block-end: functions.responsive-value(60, 30);
+
+  @media (min-width: #{1024 + 0.1px}) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-block-start: functions.responsive-value(60, 30);
+  }
+
+  // .contacts__map
+  &__map {
+    grid-column: 2 / -1;
+    grid-row: span 3;
+    block-size: 100%;
+    font-size: 0;
+    background-color: variables.$color-f3f3f3;
+
+    @media (max-width: 1024px) {
+      margin-inline: -15px;
+      aspect-ratio: 375 / 250;
+    }
+  }
+}
+
+.address {
+  @media (min-width: #{1024 + 0.1px}) {
+    display: contents;
+  }
+
+  // .address__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+
+    @media (min-width: #{1024 + 0.1px}) {
+      display: contents;
+    }
+  }
+
+  // .address__item
+  &__item {
+  }
+}
+
+.address-card {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  block-size: 100%;
+  padding: 20px;
+  background-color: variables.$color-f3f3f3;
+  border-block-start: 2px solid variables.$color-accent;
+
+  // .address-card__title
+  &__title {
+    font-weight: 500;
+    font-size: functions.responsive-value(22, 16);
+  }
+
+  // .address-card__list
+  &__list {
+  }
+
+  // .address-card__item
+  &__item {
+    &:not(:last-child) {
+      margin-block-end: 10px;
+    }
+  }
+
+  // .address-card__link
+  &__link {
+    display: inline-block;
+    font-size: functions.responsive-value(16, 12);
+    line-height: calc(21 / 16);
+    text-wrap: balance;
+
+    &[href^="tel:"] {
+      white-space: nowrap;
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-accent;
+    }
+  }
+}
