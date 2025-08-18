@@ -8,10 +8,11 @@
   font-size: functions.responsive-value(16, 14);
   font-weight: 300;
   line-height: calc(23 / 16);
+  color: variables.$color-black;
 
   > * {
     &:not(:last-child) {
-      margin-block-end: 1em;
+      margin-block-end: 1.5em;
     }
   }
 
@@ -22,23 +23,23 @@
 
     > * {
       &:not(:last-child, p:has(+ ul)) {
-        margin-block-end: 1em;
+        margin-block-end: 1.5em;
       }
     }
   }
 
-  h1,
-  h2 {
-    font-weight: 500;
-    line-height: calc(26 / 22);
-  }
-
   h1 {
-    font-size: functions.responsive-value(26, 18);
+    font-size: functions.responsive-value(36, 22);
+    font-weight: 600;
+    line-height: calc(44 / 36);
+    text-wrap: balance;
   }
 
   h2 {
     font-size: functions.responsive-value(22, 16);
+    font-weight: 500;
+    line-height: calc(26 / 22);
+    text-wrap: balance;
   }
 
   ul {
@@ -73,5 +74,10 @@
 
   li {
     padding-inline-start: 1em;
+  }
+
+  img {
+    max-inline-size: 100%;
+    block-size: auto;
   }
 }
