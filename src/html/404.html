@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("base/head.html", {
+"title": "страница не найдена"
+})
+
+<body>
+  @@include("icons/icons.svg")
+  <div class="wrapper" data-wrapper>
+    @@include("base/header.html", {
+    "page": "404"
+    })
+    <main class="main">
+      @@include("pages/404/404.html")
+    </main>
+    @@include("base/footer.html", {
+    "page": "404"
+    })
+    @@include("ui/up.html")
+  </div>
+  @@include("base/js.html")
+</body>
+
+</html>
