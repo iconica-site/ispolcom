@@ -15,6 +15,18 @@
     }
   }
 
+  > div {
+    &:not(:last-child) {
+      margin-block-end: 3em;
+    }
+
+    > * {
+      &:not(:last-child, p:has(+ ul)) {
+        margin-block-end: 1em;
+      }
+    }
+  }
+
   h1,
   h2 {
     font-weight: 500;
@@ -23,13 +35,22 @@
 
   h1 {
     font-size: functions.responsive-value(26, 18);
-    font-weight: 500;
+  }
+
+  h2 {
+    font-size: functions.responsive-value(22, 16);
   }
 
   ul {
-    li {
-      &::before {
-        content: "- ";
+    &[data-default] {
+      list-style: inside;
+    }
+
+    &:not([data-default]) {
+      li {
+        &::before {
+          content: "- ";
+        }
       }
     }
   }

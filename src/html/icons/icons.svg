@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-back" viewBox="0 0 25 25" fill="none">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 17.5-5-5 5-5" />
+  </symbol>
   <symbol id="icon-burger" viewBox="0 0 14 12" stroke="none">
     <path d="M13 0H1a1 1 0 1 0 0 2h12a1 1 0 1 0 0-2ZM13 5H1a1 1 0 0 0 0 2h12a1 1 0 1 0 0-2ZM13 10H1a1 1 0 1 0 0 2h12a1 1 0 1 0 0-2Z" />
   </symbol>
