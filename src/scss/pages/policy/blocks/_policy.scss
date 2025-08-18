@@ -1,0 +1,7 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.policy {
+  padding-block: functions.responsive-value(60, 30);
+}

@@ -1,0 +1,56 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.text {
+  max-inline-size: 768px;
+  margin-inline: auto;
+  font-size: functions.responsive-value(16, 14);
+  font-weight: 300;
+  line-height: calc(23 / 16);
+
+  > * {
+    &:not(:last-child) {
+      margin-block-end: 1em;
+    }
+  }
+
+  h1,
+  h2 {
+    font-weight: 500;
+    line-height: calc(26 / 22);
+  }
+
+  h1 {
+    font-size: functions.responsive-value(26, 18);
+    font-weight: 500;
+  }
+
+  ul {
+    li {
+      &::before {
+        content: "- ";
+      }
+    }
+  }
+
+  ol {
+    counter-reset: ol;
+
+    > li {
+      &:not(:last-child) {
+        margin-block-end: 0.5em;
+      }
+
+      &::before {
+        content: counters(ol, ".") ". ";
+        counter-increment: ol;
+        font-weight: 500;
+      }
+    }
+  }
+
+  li {
+    padding-inline-start: 1em;
+  }
+}
